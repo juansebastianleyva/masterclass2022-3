@@ -1,6 +1,8 @@
 package com.usa.misiontic.masterclass3.repository;
 
 import com.usa.misiontic.masterclass3.entities.Product;
+import com.usa.misiontic.masterclass3.entities.Reservas;
+import com.usa.misiontic.masterclass3.repository.crudRepository.ReservasCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -14,9 +16,9 @@ public class ReservasRepository {
     private ReservasCrudRepository reservasCrudRepository;
 
     public List<Reservas> getAll(){
-        return (List<Product>) reservasCrudRepository.findAll();
+        return (List<Reservas>) reservasCrudRepository.findAll();
     }
-    public Optional<Reservas> getProduct(int id){
+    public Optional<Reservas> getReservas(int id){
         return reservasCrudRepository.findById(id);
     }
     public Reservas save(Reservas p){

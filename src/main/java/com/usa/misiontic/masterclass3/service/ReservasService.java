@@ -1,6 +1,7 @@
 package com.usa.misiontic.masterclass3.service;
 
 import com.usa.misiontic.masterclass3.entities.Product;
+import com.usa.misiontic.masterclass3.entities.Reservas;
 import com.usa.misiontic.masterclass3.repository.ProductRepository;
 import com.usa.misiontic.masterclass3.repository.ReservasRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ public class ReservasService {
         return reservasRepository.getAll();
     }
     public Optional<Reservas> getProduct(int id){
-        return reservasRepository.getProduct(id);
+        return reservasRepository.getReservas(id);
     }
     public Reservas save(Reservas p){
         if(p.getId()==null){
