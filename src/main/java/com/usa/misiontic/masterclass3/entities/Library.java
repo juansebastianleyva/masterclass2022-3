@@ -4,21 +4,21 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 
 @Entity
-@Table(name = "category")
-public class Category implements Serializable {
+@Table(name = "library")
+public class Library implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
+    private String target;
     private String description;
-
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "category")
-    @JsonIgnoreProperties("category")
-    private List<Library> libs;
+    @ManyToOne
+    @JoinColumn(name = "categoryId")
+    @JsonIgnoreProperties("products")
+    private Category category;
 
     public Integer getId() {
         return id;
@@ -36,6 +36,14 @@ public class Category implements Serializable {
         this.name = name;
     }
 
+    public String getTarget() {
+        return target;
+    }
+
+    public void setTarget(String target) {
+        this.target = target;
+    }
+
     public String getDescription() {
         return description;
     }
@@ -44,11 +52,11 @@ public class Category implements Serializable {
         this.description = description;
     }
 
-    public List<Library> getLibs() {
-        return libs;
+    public Category getCategory() {
+        return category;
     }
 
-    public void setLibs(List<Library> libs) {
-        this.libs = libs;
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }
