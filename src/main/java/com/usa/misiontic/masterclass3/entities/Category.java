@@ -12,7 +12,7 @@ public class Category implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer idCategory;
     private String name;
     private String description;
 
@@ -27,12 +27,12 @@ public class Category implements Serializable {
     private List<Reservas> reservas;
 
 
-    public Integer getId() {
-        return id;
+    public Integer getIdCategory() {
+        return idCategory;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdCategory(Integer id) {
+        this.idCategory = id;
     }
 
     public String getName() {
@@ -57,5 +57,13 @@ public class Category implements Serializable {
 
     public void setLibs(List<Library> libs) {
         this.libs = libs;
+    }
+
+    public List<Reservas> getReservas() {
+        return reservas;
+    }
+
+    public void setReservas(List<Reservas> reservas) {
+        this.reservas = reservas;
     }
 }

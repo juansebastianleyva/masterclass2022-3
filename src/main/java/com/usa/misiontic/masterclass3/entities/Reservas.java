@@ -12,7 +12,7 @@ public class Reservas implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer idReserva;
     private String palco;
     private String cliente;
     private Date fechainicio;
@@ -23,12 +23,12 @@ public class Reservas implements Serializable {
     @JsonIgnoreProperties("reservas")
     private Category category;
 
-    public Integer getId() {
-        return id;
+    public Integer getIdReserva() {
+        return idReserva;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdReserva(Integer id) {
+        this.idReserva = id;
     }
 
     public String getPalco() {
