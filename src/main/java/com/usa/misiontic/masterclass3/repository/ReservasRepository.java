@@ -14,7 +14,6 @@ public class ReservasRepository {
 
     @Autowired
     private ReservasCrudRepository reservasCrudRepository;
-
     public List<Reservas> getAll(){
         return (List<Reservas>) reservasCrudRepository.findAll();
     }
